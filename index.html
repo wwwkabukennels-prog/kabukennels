@@ -83,11 +83,12 @@
     }
 
     /* DARK OVERLAY */
-    .hero-bg::after {
+    header::after {
       content: '';
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.55);
+      z-index: -1;
     }
 
     /* FADE-IN ANIMATION */
@@ -124,31 +125,11 @@
     /* HEADER / HERO */
     header {
       position: relative;
-      background: none;
+      background: url('images/hero-cover.jpg') no-repeat center center/cover;
       color: white;
       padding: 80px 20px 100px 260px;
       text-align: center;
       overflow: hidden;
-    }
-
-    /* HERO SLIDES */
-    .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      animation: fadeBg 18s infinite;
-      background-size: cover;
-      background-position: center;
-    }
-
-    @keyframes fadeBg {
-      0%   { background-image: url('images/hero1.jpg'); }
-      33%  { background-image: url('images/hero2.jpg'); }
-      66%  { background-image: url('images/hero3.jpg'); }
-      100% { background-image: url('images/hero1.jpg'); }
     }
 
     .logo {
@@ -301,59 +282,60 @@
       padding: 25px;
       font-size: 0.9rem;
     }
+
     /* WHATSAPP FLOATING BUTTON */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    text-decoration: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    z-index: 999;
-  }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
 
-  /* TESTIMONIALS */
-  .testimonials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-  }
+    /* TESTIMONIALS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
 
-  .testimonial {
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-  }
+    .testimonial {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    }
 
-  .testimonial strong {
-    display: block;
-    margin-top: 15px;
-    color: var(--primary);
-  }
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      color: var(--primary);
+    }
 
-  /* GALLERY */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-  .gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 16px;
-  }
-</style>
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+  </style>
 
   <!-- LOCAL BUSINESS SCHEMA -->
   <script type="application/ld+json">
@@ -361,7 +343,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "KABUKENNELS",
-    "image": "https://example.com/hero-dog.jpg",
+    "image": "https://example.com/hero-cover.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chwele",
@@ -418,7 +400,7 @@
 
   <div class="grid">
     <div class="card">
-      <img src="dog1.jpg" alt="German Shepherd Puppy">
+      <img src="images/dog1.jpg" alt="German Shepherd Puppy">
       <div class="card-content">
         <span class="badge">Available</span>
         <h3>German Shepherd Puppy</h3>
@@ -427,7 +409,7 @@
     </div>
 
     <div class="card">
-      <img src="dog2.jpg" alt="Phalene">
+      <img src="images/dog2.jpg" alt="Phalene">
       <div class="card-content">
         <span class="badge">Available</span>
         <h3>Phalene Puppy</h3>
@@ -443,7 +425,7 @@
 
   <div class="grid">
     <div class="card">
-      <img src="stud1.jpg" alt="German Shepherd Stud">
+      <img src="images/stud1.jpg" alt="German Shepherd Stud">
       <div class="card-content">
         <span class="badge">Stud</span>
         <h3>German Shepherd Male</h3>
@@ -459,7 +441,7 @@
 
   <div class="grid">
     <div class="card">
-      <img src="security1.jpg" alt="Security Dog">
+      <img src="images/security1.jpg" alt="Security Dog">
       <div class="card-content">
         <span class="badge">Trained</span>
         <h3>Trained Security Dog</h3>
@@ -517,10 +499,10 @@
   <p class="subtitle">A glimpse into our dogs, training, and facilities.</p>
 
   <div class="gallery">
-    <img src="gallery1.jpg" alt="Kennel dog">
-    <img src="gallery2.jpg" alt="Training session">
-    <img src="gallery3.jpg" alt="Security dog on duty">
-    <img src="gallery4.jpg" alt="Puppies">
+    <img src="images/gallery1.jpg" alt="Kennel dog">
+    <img src="images/gallery2.jpg" alt="Training session">
+    <img src="images/gallery3.jpg" alt="Security dog on duty">
+    <img src="images/gallery4.jpg" alt="Puppies">
   </div>
 </section>
 
@@ -545,7 +527,6 @@
   </div>
 
   <div class="contact-box">
-  <div class="contact-box">
     <h2>Contact KABUKENNELS</h2>
     <p>Email: <a href="mailto:kabudaniel4@gmail.com">kabudaniel4@gmail.com</a></p>
     <p>Phone / WhatsApp: <a href="https://wa.me/254798175075">+254 798 175 075</a></p>
@@ -556,7 +537,6 @@
 <footer>
   <p>© 2025 KABUKENNELS. Premium Dogs. Professional Service.</p>
 </footer>
-
 
 <a class="whatsapp-float" href="https://wa.me/254798175075" target="_blank">💬</a>
 
