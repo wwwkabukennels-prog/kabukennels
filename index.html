@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KABUKENNELS | Premium Dog Breeders & Security Dogs in Chwele, Kenya</title>
+
+  <!-- SEO META -->
+  <meta name="description" content="KABUKENNELS is a premium dog breeding and security dog provider in Chwele, Kenya. German Shepherds, Rottweilers, trained security dogs, stud services, and after-sale support.">
+  <meta name="keywords" content="KABUKENNELS, dog breeders Kenya, German Shepherd Kenya, Rottweiler puppies, security dogs Kenya, stud services, trained guard dogs, Chwele kennel">
+  <meta name="author" content="KABUKENNELS">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="KABUKENNELS | Premium Dog Breeders & Security Dogs">
+  <meta property="og:description" content="Premium German Shepherds, Rottweilers, and trained security dogs in Kenya.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_KE">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* SIDEBAR TOGGLE (MOBILE) */
+    .sidebar-toggle {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #000;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 18px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 100vh;
+      background: #000;
+      padding: 30px 20px;
+      z-index: 1000;
+    }
+
+    .sidebar h3 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #bbb;
+      text-decoration: none;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+
+      .sidebar-toggle {
+        display: block;
+      }
+
+      header {
+        padding-left: 20px;
+      }
+    }
+
+    /* DARK OVERLAY */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    /* FADE-IN ANIMATION */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    :root {
+      --primary: #0a3cff;
+      --dark: #0b0b0b;
+      --gray: #f4f6f9;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--gray);
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* HEADER / HERO */
+    header {
+      position: relative;
+      background: none;
+      color: white;
+      padding: 80px 20px 100px 260px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* HERO SLIDES */
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      animation: fadeBg 18s infinite;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @keyframes fadeBg {
+      0%   { background-image: url('images/hero1.jpg'); }
+      33%  { background-image: url('images/hero2.jpg'); }
+      66%  { background-image: url('images/hero3.jpg'); }
+      100% { background-image: url('images/hero1.jpg'); }
+    }
+
+    .logo {
+      width: 110px;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0.9;
+    }
+
+    nav {
+      margin-top: 30px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .cta {
+      margin-top: 40px;
+    }
+
+    .cta a {
+      background: var(--primary);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    section.light {
+      background: var(--white);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      color: #555;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .feature {
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: var(--dark);
+      color: white;
+      padding: 60px 20px;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .contact-box a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      color: #bbb;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9rem;
+    }
+    /* WHATSAPP FLOATING BUTTON */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .testimonial {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+  }
+
+  .testimonial strong {
+    display: block;
+    margin-top: 15px;
+    color: var(--primary);
+  }
+
+  /* GALLERY */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+</style>
+
+  <!-- LOCAL BUSINESS SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "KABUKENNELS",
+    "image": "https://example.com/hero-dog.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chwele",
+      "addressCountry": "KE"
+    },
+    "email": "kabudaniel4@gmail.com",
+    "telephone": "+254798175075",
+    "url": "https://kabukennels.com",
+    "sameAs": [
+      "https://www.google.com/maps?q=Kabukennels+Chwele"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+
+<div class="sidebar">
+  <h3>Menu</h3>
+  <a href="#dogs">Available Dogs</a>
+  <a href="#stud">Stud Services</a>
+  <a href="#security">Security Dogs</a>
+  <a href="#why">Why Us</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<header>
+  <div class="logo-wrap">
+    <img src="images/logo.png" alt="Kabukennels Logo" class="logo">
+  </div>
+  <h1>KABUKENNELS</h1>
+  <p>Premium German Shepherds, Rottweilers, and professionally trained security dogs bred for excellence, loyalty, and protection.</p>
+
+  <nav>
+    <a href="#dogs">Dogs</a>
+    <a href="#stud">Stud Services</a>
+    <a href="#security">Security Dogs</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="cta">
+    <a href="#dogs">View Available Dogs</a>
+    <a href="https://wa.me/254798175075">WhatsApp Us</a>
+  </div>
+</header>
+
+<section id="dogs" class="light">
+  <h2>Available Dogs</h2>
+  <p class="subtitle">Carefully bred, vaccinated, and raised under professional care.</p>
+
+  <div class="grid">
+    <div class="card">
+      <img src="dog1.jpg" alt="German Shepherd Puppy">
+      <div class="card-content">
+        <span class="badge">Available</span>
+        <h3>German Shepherd Puppy</h3>
+        <p>3 months old · Vaccinated · KSh 50,000</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="dog2.jpg" alt="Phalene">
+      <div class="card-content">
+        <span class="badge">Available</span>
+        <h3>Phalene Puppy</h3>
+        <p>11 months old · Strong bloodline · KSh 45,000</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stud">
+  <h2>Stud Services</h2>
+  <p class="subtitle">Elite males with proven genetics and temperament.</p>
+
+  <div class="grid">
+    <div class="card">
+      <img src="stud1.jpg" alt="German Shepherd Stud">
+      <div class="card-content">
+        <span class="badge">Stud</span>
+        <h3>German Shepherd Male</h3>
+        <p>Excellent structure, obedience trained, strong lineage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="security" class="light">
+  <h2>Security Dogs</h2>
+  <p class="subtitle">Professionally trained dogs for home, business, and industrial security.</p>
+
+  <div class="grid">
+    <div class="card">
+      <img src="security1.jpg" alt="Security Dog">
+      <div class="card-content">
+        <span class="badge">Trained</span>
+        <h3>Trained Security Dog</h3>
+        <p>Command trained, alert, disciplined, and reliable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <h2>Why Choose KABUKENNELS</h2>
+
+  <div class="features">
+    <div class="feature">
+      <h3>Premium Bloodlines</h3>
+      <p>Carefully selected genetics to ensure strength, intelligence, and health.</p>
+    </div>
+    <div class="feature">
+      <h3>Professional Training</h3>
+      <p>Dogs trained for obedience, security, and controlled aggression.</p>
+    </div>
+    <div class="feature">
+      <h3>After-Sale Support</h3>
+      <p>Guidance on feeding, training, and care even after purchase.</p>
+    </div>
+    <div class="feature">
+      <h3>Trusted & Experienced</h3>
+      <p>Years of experience serving homes, businesses, and institutions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>Client Testimonials</h2>
+  <p class="subtitle">Trusted by dog owners, businesses, and security clients.</p>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      <p>"Excellent German Shepherd. Very disciplined and alert. Best kennel experience I have had."</p>
+      <strong>— Home Owner, Nairobi</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Professional service and strong bloodlines. The security dog exceeded expectations."</p>
+      <strong>— Business Client</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Great after-sale support and guidance. Highly recommended."</p>
+      <strong>— Dog Breeder Partner</strong>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="light">
+  <h2>Gallery</h2>
+  <p class="subtitle">A glimpse into our dogs, training, and facilities.</p>
+
+  <div class="gallery">
+    <img src="gallery1.jpg" alt="Kennel dog">
+    <img src="gallery2.jpg" alt="Training session">
+    <img src="gallery3.jpg" alt="Security dog on duty">
+    <img src="gallery4.jpg" alt="Puppies">
+  </div>
+</section>
+
+<section id="contact" class="light">
+  <h2>Our Location</h2>
+  <p class="subtitle">Visit us or find us easily using Google Maps.</p>
+
+  <div style="max-width:1200px;margin:0 auto 60px;">
+    <iframe
+      src="https://www.google.com/maps?q=Kabukennels%20Chwele&output=embed"
+      width="100%"
+      height="400"
+      style="border:0;border-radius:20px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <div style="margin-top:20px;text-align:center;">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Kabukennels+Chwele" target="_blank" style="background:#0a3cff;color:white;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:600;">Get Directions</a>
+    </div>
+  </div>
+
+  <div class="contact-box">
+  <div class="contact-box">
+    <h2>Contact KABUKENNELS</h2>
+    <p>Email: <a href="mailto:kabudaniel4@gmail.com">kabudaniel4@gmail.com</a></p>
+    <p>Phone / WhatsApp: <a href="https://wa.me/254798175075">+254 798 175 075</a></p>
+    <p>P.O BOX 50200-300, CHWELE</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 KABUKENNELS. Premium Dogs. Professional Service.</p>
+</footer>
+
+
+<a class="whatsapp-float" href="https://wa.me/254798175075" target="_blank">💬</a>
+
+<script>
+  function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('active');
+  }
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('section, .card, .feature, .testimonial').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
