@@ -4,115 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KABUKENNELS | Premium Dog Breeders & Security Dogs in Chwele, Kenya</title>
-
-  <!-- SEO META -->
-  <meta name="description" content="KABUKENNELS is a premium dog breeding and security dog provider in Chwele, Kenya. German Shepherds, Rottweilers, trained security dogs, stud services, and after-sale support.">
-  <meta name="keywords" content="KABUKENNELS, dog breeders Kenya, German Shepherd Kenya, Rottweiler puppies, security dogs Kenya, stud services, trained guard dogs, Chwele kennel">
-  <meta name="author" content="KABUKENNELS">
-
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="KABUKENNELS | Premium Dog Breeders & Security Dogs">
-  <meta property="og:description" content="Premium German Shepherds, Rottweilers, and trained security dogs in Kenya.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_KE">
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="KABUKENNELS is a premium dog breeding and security dog provider in Chwele, Kenya.">
   <style>
-    /* SIDEBAR TOGGLE (MOBILE) */
-    .sidebar-toggle {
-      display: none;
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background: #000;
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-size: 18px;
-      z-index: 1001;
-      cursor: pointer;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 240px;
-      height: 100vh;
-      background: #000;
-      padding: 30px 20px;
-      z-index: 1000;
-    }
-
-    .sidebar h3 {
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      color: #bbb;
-      text-decoration: none;
-      margin-bottom: 14px;
-      font-weight: 500;
-    }
-
-    .sidebar a:hover {
-      color: #6d7c58;
-    }
-
-    @media (max-width: 900px) {
-      .sidebar {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-      }
-
-      .sidebar.active {
-        transform: translateX(0);
-      }
-
-      .sidebar-toggle {
-        display: block;
-      }
-
-      header {
-        padding-left: 20px;
-      }
-    }
-
-    /* HERO BACKGROUND OVERLAY */
-    .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.25);
-    }
-
-    /* FADE-IN ANIMATION */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     :root {
       --primary: #0a3cff;
       --dark: #0b0b0b;
       --gray: #f4f6f9;
       --white: #ffffff;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -121,257 +22,128 @@
       line-height: 1.7;
     }
 
-    /* HEADER / HERO */
-    header {
-      position: relative;
-      background: none;
-      color: rgb(250, 250, 250);
-      padding: 80px 20px 100px 260px; /* keeps space for sidebar */
-      text-align: center;
-      overflow: hidden;
-      min-height: 520px; /* height for hero area */
+    /* Sidebar */
+    .sidebar-toggle { display:none; position: fixed; top:20px; left:20px; z-index:1001; }
+    .sidebar { position: fixed; top:0; left:0; width:240px; height:100vh; background:#000; padding:30px 20px; z-index:1000; }
+    .sidebar h3 { color:#fff; margin-bottom:20px; }
+    .sidebar a { display:block; color:#bbb; text-decoration:none; margin-bottom:14px; font-weight:500; }
+    .sidebar a:hover { color:#6d7c58; }
+    @media (max-width:900px) {
+      .sidebar { transform: translateX(-100%); transition: transform .3s ease; }
+      .sidebar.active { transform: translateX(0); }
+      .sidebar-toggle { display:block; background:#000; color:#fff; padding:10px 14px; border-radius:6px; cursor:pointer; }
+      header { padding-left:20px; }
     }
 
-    /* HERO IMAGE (single image) */
-    .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+    /* Header / hero */
+    header { position: relative; padding: 80px 20px 100px 260px; text-align:center; min-height:520px; overflow:hidden; color:#fafafa; }
+    .hero-bg { position:absolute; inset:0; z-index:-1; background-image: url('images/cover.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat; }
+    .hero-bg::after { content:''; position:absolute; inset:0; background: rgba(0,0,0,0.25); }
+    header h1 { font-size:3.5rem; margin-bottom:10px; letter-spacing:2px; }
+    header p { font-size:1.2rem; max-width:800px; margin:auto; opacity:0.95; }
+    nav { margin-top:30px; }
+    nav a { color:white; margin:0 14px; text-decoration:none; font-weight:600; font-size:0.95rem; }
+    .cta { margin-top:40px; }
+    .cta a { background:var(--primary); color:white; padding:14px 32px; border-radius:30px; text-decoration:none; font-weight:600; margin:0 10px; display:inline-block; }
 
-      /* Put your single cover image here (replace path as needed) */
-      background-image: url('images/cover.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+    /* Sections */
+    section { max-width:1200px; margin:auto; padding:80px 20px; }
+    section.light { background: var(--white); }
+    h2 { text-align:center; font-size:2.4rem; margin-bottom:20px; }
+    .subtitle { text-align:center; max-width:800px; margin:0 auto 60px; color:#555; }
 
-    header h1 {
-      font-size: 3.5rem;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
+    /* Cards & gallery thumbnails */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
+    .card { background:white; border-radius:18px; overflow:hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition:transform .3s ease; }
+    .card:hover { transform: translateY(-8px); }
+    .card img { width:100%; height:240px; object-fit:cover; display:block; cursor: zoom-in; }
+    .card-content { padding:20px; }
+    .badge { display:inline-block; background:var(--primary); color:white; padding:4px 12px; border-radius:20px; font-size:.75rem; margin-bottom:10px; }
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: auto;
-      opacity: 0.9;
-    }
+    .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:30px; text-align:center; }
+    .feature { padding:30px; background:white; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05); }
 
-    nav {
-      margin-top: 30px;
-    }
+    .contact-box { background:var(--dark); color:white; padding:60px 20px; border-radius:24px; text-align:center; }
+    footer { background:#000; color:#bbb; text-align:center; padding:25px; font-size:.9rem; }
 
-    nav a {
-      color: white;
-      margin: 0 14px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+    .whatsapp-float { position: fixed; bottom:25px; right:25px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; text-decoration:none; box-shadow:0 10px 25px rgba(0,0,0,0.3); z-index:999; }
 
-    nav a:hover {
-      color: var(--primary);
-    }
+    .testimonials { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
+    .testimonial { background:white; padding:30px; border-radius:18px; box-shadow:0 12px 30px rgba(0,0,0,0.07); }
+    .testimonial strong { display:block; margin-top:15px; color:var(--primary); }
 
-    .cta {
-      margin-top: 40px;
-    }
+    .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+    .gallery img { width:100%; height:220px; object-fit:cover; border-radius:16px; cursor: zoom-in; display:block; }
 
-    .cta a {
-      background: var(--primary);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      margin: 0 10px;
-      display: inline-block;
-    }
-
-    /* SECTIONS */
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 80px 20px;
-    }
-
-    section.light {
-      background: var(--white);
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-    }
-
-    .subtitle {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 60px;
-      color: #555;
-    }
-
-    /* CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      margin-bottom: 10px;
-    }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      text-align: center;
-    }
-
-    .feature {
+    /* Modal / lightbox */
+    .img-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
       padding: 30px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .img-modal.active { display: flex; }
+    .img-modal__content {
+      max-width: 1100px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .img-modal__img-wrap {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: #111;
+    }
+    .img-modal__img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      display: block;
+    }
+    .img-modal__caption {
+      padding: 12px 18px;
+      font-size: 1rem;
+      background: #fff;
+      color: #222;
+      text-align: left;
+      border-top: 1px solid #eee;
+    }
+    .img-modal__close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
     }
 
-    /* CONTACT */
-    .contact-box {
-      background: var(--dark);
-      color: white;
-      padding: 60px 20px;
-      border-radius: 24px;
-      text-align: center;
+    /* small screens */
+    @media (max-width: 760px) {
+      header { padding-left: 20px; }
+      .card img { height: 180px; }
+      .gallery img { height: 140px; }
+      .img-modal__content { border-radius: 8px; }
+      .img-modal__caption { font-size: .95rem; }
     }
-
-    .contact-box a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #000;
-      color: #bbb;
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
-    }
-    /* WHATSAPP FLOATING BUTTON */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    text-decoration: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    z-index: 999;
-  }
-
-  /* TESTIMONIALS */
-  .testimonials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-  }
-
-  .testimonial {
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-  }
-
-  .testimonial strong {
-    display: block;
-    margin-top: 15px;
-    color: var(--primary);
-  }
-
-  /* GALLERY */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-
-  .gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 16px;
-  }
-</style>
-
-  <!-- LOCAL BUSINESS SCHEMA -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "KABUKENNELS",
-    "image": "https://example.com/hero-dog.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Chwele",
-      "addressCountry": "KE"
-    },
-    "email": "kabudaniel4@gmail.com",
-    "telephone": "+254798175075",
-    "url": "https://kabukennels.com",
-    "sameAs": [
-      "https://www.google.com/maps?q=Kabukennels+Chwele"
-    ]
-  }
-  </script>
+  </style>
 </head>
 <body>
 
 <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
-
 <div class="sidebar">
   <h3>Menu</h3>
   <a href="#dogs">Available Dogs</a>
@@ -384,14 +156,9 @@
 </div>
 
 <header>
-  <!-- single hero background image (replace images/cover.jpg with your image) -->
   <div class="hero-bg"></div>
-
-  <!-- Logo removed as requested -->
-
   <h1>KABUKENNELS</h1>
   <p>Premium German Shepherds, Rottweilers, and professionally trained security dogs bred for excellence, loyalty, and protection.</p>
-
   <nav>
     <a href="#dogs">Dogs</a>
     <a href="#stud">Stud Services</a>
@@ -406,13 +173,24 @@
   </div>
 </header>
 
+<!-- Image modal (lightbox) -->
+<div id="imgModal" class="img-modal" role="dialog" aria-hidden="true">
+  <button class="img-modal__close" aria-label="Close (Esc)" id="imgModalClose">×</button>
+  <div class="img-modal__content" role="document">
+    <div class="img-modal__img-wrap">
+      <img id="imgModalImage" src="" alt="" class="img-modal__img">
+    </div>
+    <div id="imgModalCaption" class="img-modal__caption"></div>
+  </div>
+</div>
+
 <section id="dogs" class="light">
   <h2>Available Dogs</h2>
   <p class="subtitle">Carefully bred, vaccinated, and raised under professional care.</p>
 
   <div class="grid">
     <div class="card">
-      <img src="dog1.jpg" alt="German Shepherd Puppy">
+      <img class="expandable" src="dog1.jpg" alt="German Shepherd Puppy">
       <div class="card-content">
         <span class="badge">Available</span>
         <h3>German Shepherd Puppy</h3>
@@ -421,7 +199,7 @@
     </div>
 
     <div class="card">
-      <img src="dog2.jpg" alt="Phalene">
+      <img class="expandable" src="dog2.jpg" alt="Phalene">
       <div class="card-content">
         <span class="badge">Available</span>
         <h3>Phalene Puppy</h3>
@@ -437,7 +215,7 @@
 
   <div class="grid">
     <div class="card">
-      <img src="stud1.jpg" alt="German Shepherd Stud">
+      <img class="expandable" src="stud1.jpg" alt="German Shepherd Stud">
       <div class="card-content">
         <span class="badge">Stud</span>
         <h3>German Shepherd Male</h3>
@@ -453,7 +231,7 @@
 
   <div class="grid">
     <div class="card">
-      <img src="security1.jpg" alt="Security Dog">
+      <img class="expandable" src="security1.jpg" alt="Security Dog">
       <div class="card-content">
         <span class="badge">Trained</span>
         <h3>Trained Security Dog</h3>
@@ -511,10 +289,10 @@
   <p class="subtitle">A glimpse into our dogs, training, and facilities.</p>
 
   <div class="gallery">
-    <img src="gallery1.jpg" alt="Kennel dog">
-    <img src="gallery2.jpg" alt="Training session">
-    <img src="gallery3.jpg" alt="Security dog on duty">
-    <img src="gallery4.jpg" alt="Puppies">
+    <img class="expandable" src="gallery1.jpg" alt="Kennel dog">
+    <img class="expandable" src="gallery2.jpg" alt="Training session">
+    <img class="expandable" src="gallery3.jpg" alt="Security dog on duty">
+    <img class="expandable" src="gallery4.jpg" alt="Puppies">
   </div>
 </section>
 
@@ -539,7 +317,6 @@
   </div>
 
   <div class="contact-box">
-  <div class="contact-box">
     <h2>Contact KABUKENNELS</h2>
     <p>Email: <a href="mailto:kabudaniel4@gmail.com">kabudaniel4@gmail.com</a></p>
     <p>Phone / WhatsApp: <a href="https://wa.me/254798175075">+254 798 175 075</a></p>
@@ -551,27 +328,96 @@
   <p>© 2025 KABUKENNELS. Premium Dogs. Professional Service.</p>
 </footer>
 
-
 <a class="whatsapp-float" href="https://wa.me/254798175075" target="_blank">💬</a>
 
 <script>
+  // Sidebar toggle (mobile)
   function toggleSidebar() {
     document.querySelector('.sidebar').classList.toggle('active');
   }
 
-  // Fade-in on scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+  // Lightbox modal behavior
+  (function () {
+    const modal = document.getElementById('imgModal');
+    const modalImage = document.getElementById('imgModalImage');
+    const modalCaption = document.getElementById('imgModalCaption');
+    const btnClose = document.getElementById('imgModalClose');
+
+    // Utility: extract filename from path
+    function filenameFromPath(path) {
+      try {
+        const parts = path.split('/');
+        return parts[parts.length - 1];
+      } catch (e) {
+        return path;
+      }
+    }
+
+    // Open modal for a clicked image element
+    function openModalFor(imgEl) {
+      const src = imgEl.getAttribute('src');
+      const alt = imgEl.getAttribute('alt') || '';
+      modalImage.src = src;
+      modalImage.alt = alt;
+      // Show caption as filename and, if available, the alt text in parentheses
+      const filename = filenameFromPath(src);
+      modalCaption.textContent = filename + (alt ? ' — ' + alt : '');
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      // prevent page scroll while modal open
+      document.body.style.overflow = 'hidden';
+      // focus close button for accessibility
+      btnClose.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImage.src = '';
+      modalImage.alt = '';
+      modalCaption.textContent = '';
+      document.body.style.overflow = '';
+    }
+
+    // attach click handlers to all images with class 'expandable'
+    document.querySelectorAll('img.expandable').forEach(img => {
+      img.addEventListener('click', function (e) {
+        openModalFor(img);
+      });
+      // also make Enter key open when focused
+      img.tabIndex = 0;
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModalFor(img);
+        }
+      });
+    });
+
+    // close when clicking the close button
+    btnClose.addEventListener('click', function () {
+      closeModal();
+    });
+
+    // close when clicking outside the content
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
       }
     });
-  }, { threshold: 0.2 });
 
-  document.querySelectorAll('section, .card, .feature, .testimonial').forEach(el => {
-    el.classList.add('fade-in');
-    observer.observe(el);
-  });
+    // close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // Prevent modal content clicks from closing
+    document.querySelector('.img-modal__content').addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  })();
 </script>
 
 </body>
