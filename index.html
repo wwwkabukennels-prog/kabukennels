@@ -60,7 +60,7 @@
     }
 
     .sidebar a:hover {
-      color: #fff;
+      color: #6d7c58;
     }
 
     @media (max-width: 900px) {
@@ -87,7 +87,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.25);
     }
 
     /* FADE-IN ANIMATION */
@@ -125,7 +125,7 @@
     header {
       position: relative;
       background: none;
-      color: white;
+      color: rgb(250, 250, 250);
       padding: 80px 20px 100px 260px;
       text-align: center;
       overflow: hidden;
@@ -133,23 +133,20 @@
 
     /* HERO SLIDES */
     .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      animation: fadeBg 18s infinite;
-      background-size: cover;
-      background-position: center;
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 
-    @keyframes fadeBg {
-      0%   { background-image: url('images/hero1.jpg'); }
-      33%  { background-image: url('images/hero2.jpg'); }
-      66%  { background-image: url('images/hero3.jpg'); }
-      100% { background-image: url('images/hero1.jpg'); }
-    }
+  background-image: url('images/hero1.jpg'); /* use ONE image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+    
 
     .logo {
       width: 110px;
