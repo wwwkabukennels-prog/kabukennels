@@ -1,423 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KABUKENNELS | Premium Dog Breeders & Security Dogs in Chwele, Kenya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <meta name="description" content="KABUKENNELS is a premium dog breeding and security dog provider in Chwele, Kenya.">
-  <style>
-    :root {
-      --primary: #0a3cff;
-      --dark: #0b0b0b;
-      --gray: #f4f6f9;
-      --white: #ffffff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--gray);
-      color: #222;
-      line-height: 1.7;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>KABUKENNELS — Premium Dogs & Security Services</title>
+<meta name="description" content="KABUKENNELS — Premium German Shepherds, Rottweilers, stud services and trained security dogs." />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    /* Sidebar */
-    .sidebar-toggle { display:none; position: fixed; top:20px; left:20px; z-index:1001; }
-    .sidebar { position: fixed; top:0; left:0; width:240px; height:100vh; background:#000; padding:30px 20px; z-index:1000; }
-    .sidebar h3 { color:#fff; margin-bottom:20px; }
-    .sidebar a { display:block; color:#bbb; text-decoration:none; margin-bottom:14px; font-weight:500; }
-    .sidebar a:hover { color:#6d7c58; }
-    @media (max-width:900px) {
-      .sidebar { transform: translateX(-100%); transition: transform .3s ease; }
-      .sidebar.active { transform: translateX(0); }
-      .sidebar-toggle { display:block; background:#000; color:#fff; padding:10px 14px; border-radius:6px; cursor:pointer; }
-      header { padding-left:20px; }
-    }
+<style>
+  :root{
+    /* Esri-like blue applied as the primary/feature color */
+    --brand: #0072C6;
+    --muted:#6b7280;
+    --bg:#f4f6f9;
+    --card:#ffffff;
+    --dark:#0b0b0b;
+    --max-width:1180px;
+    --gap:18px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:#111;line-height:1.5}
+  a{color:inherit;text-decoration:none}
 
-    /* Header / hero */
-    header { position: relative; padding: 80px 20px 100px 260px; text-align:center; min-height:520px; overflow:hidden; color:#fafafa; }
-    .hero-bg { position:absolute; inset:0; z-index:-1; background-image: url('images/cover.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat; }
-    .hero-bg::after { content:''; position:absolute; inset:0; background: rgba(0,0,0,0.25); }
-    header h1 { font-size:3.5rem; margin-bottom:10px; letter-spacing:2px; }
-    header p { font-size:1.2rem; max-width:800px; margin:auto; opacity:0.95; }
-    nav { margin-top:30px; }
-    nav a { color:white; margin:0 14px; text-decoration:none; font-weight:600; font-size:0.95rem; }
-    .cta { margin-top:40px; }
-    .cta a { background:var(--primary); color:white; padding:14px 32px; border-radius:30px; text-decoration:none; font-weight:600; margin:0 10px; display:inline-block; }
+  /* Topbar / Nav */
+  .topbar{
+    background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0));
+    border-bottom:1px solid rgba(15,23,42,0.04);
+    position:sticky; top:0; z-index:60;
+  }
+  .container{max-width:var(--max-width);margin:0 auto;padding:14px 20px;}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  /* Brand moved to top-right per request */
+  .brand{
+    order:2;
+    font-weight:700;font-size:1.05rem;color:var(--dark);
+  }
+  .menu{
+    order:1;
+    display:flex;gap:18px;align-items:center;font-weight:600;color:var(--muted)
+  }
+  .menu a{font-size:0.95rem;color:var(--muted)}
+  .menu a:hover{color:var(--dark)}
+  .cta-btn{background:var(--brand);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700}
 
-    /* Sections */
-    section { max-width:1200px; margin:auto; padding:80px 20px; }
-    section.light { background: var(--white); }
-    h2 { text-align:center; font-size:2.4rem; margin-bottom:20px; }
-    .subtitle { text-align:center; max-width:800px; margin:0 auto 60px; color:#555; }
+  /* Hero */
+  header.hero{position:relative;overflow:hidden;padding:64px 0 48px}
+  .hero__bg{
+    position:absolute;inset:0;
+    /* Replace with images/cover.jpg in the images folder */
+    background-image:url('images/cover.jpg');
+    background-size:cover;background-position:center;filter:contrast(0.95) brightness(0.95);
+    z-index:0;
+  }
+  .hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,10,15,0.18), rgba(8,10,15,0.18));z-index:1}
+  .hero__content{position:relative;z-index:2;max-width:var(--max-width);margin:0 auto;padding:36px 20px;color:white;display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+  .hero h1{margin:0;font-size:2.4rem;letter-spacing:1px;font-weight:700}
+  .hero p{margin-top:10px;color:rgba(255,255,255,0.92);max-width:640px}
+  .hero__card{
+    background:rgba(255,255,255,0.97);color:#111;padding:18px;border-radius:14px;box-shadow:0 12px 30px rgba(4,6,8,0.12);
+  }
+  .hero__card h4{margin:0 0 8px;font-size:1rem}
+  .hero__links{display:flex;gap:8px;flex-wrap:wrap}
+  .hero__links a{padding:8px 10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);font-weight:600;background:transparent}
 
-    /* Cards & gallery thumbnails */
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
-    .card { background:white; border-radius:18px; overflow:hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition:transform .3s ease; }
-    .card:hover { transform: translateY(-8px); }
-    .card img { width:100%; height:240px; object-fit:cover; display:block; cursor: zoom-in; }
-    .card-content { padding:20px; }
-    .badge { display:inline-block; background:var(--primary); color:white; padding:4px 12px; border-radius:20px; font-size:.75rem; margin-bottom:10px; }
+  /* Featured carousel */
+  .section{max-width:var(--max-width);margin:34px auto;padding:0 20px}
+  .section .heading{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
+  .heading h2{margin:0;font-size:1.45rem}
+  .heading a.more{color:var(--muted);font-weight:600;font-size:0.95rem}
 
-    .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:30px; text-align:center; }
-    .feature { padding:30px; background:white; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05); }
+  .cards-carousel {
+    position:relative;
+    overflow:hidden;
+    padding:6px 0;
+  }
+  .cards-track {
+    display:flex;
+    gap:var(--gap);
+    transition:transform 600ms ease;
+    will-change:transform;
+  }
+  .carousel-item {
+    flex: 0 0 calc((100% - (var(--gap) * 2)) / 3); /* three items visible at wide widths */
+    min-width: calc((100% - (var(--gap) * 2)) / 3);
+    display:flex;
+  }
+  .card{
+    background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.06);display:flex;flex-direction:column;width:100%;
+  }
+  .card .thumb{height:180px;background-size:cover;background-position:center}
+  .card .card-body{padding:16px;flex:1;display:flex;flex-direction:column}
+  .card .meta{font-size:0.85rem;color:var(--muted);margin-bottom:8px}
+  .card h3{margin:0 0 10px;font-size:1.05rem}
+  .card p{margin:0 0 14px;color:#444;flex:1}
+  .card a.read{color:var(--brand);font-weight:700}
 
-    .contact-box { background:var(--dark); color:white; padding:60px 20px; border-radius:24px; text-align:center; }
-    footer { background:#000; color:#bbb; text-align:center; padding:25px; font-size:.9rem; }
+  /* carousel controls */
+  .carousel-controls{display:flex;gap:8px;align-items:center}
+  .carousel-btn{
+    background:rgba(255,255,255,0.95);border-radius:8px;padding:8px 10px;border:1px solid rgba(2,6,23,0.06);cursor:pointer;font-weight:700;
+  }
 
-    .whatsapp-float { position: fixed; bottom:25px; right:25px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; text-decoration:none; box-shadow:0 10px 25px rgba(0,0,0,0.3); z-index:999; }
+  /* Responsive adjustments */
+  @media (max-width:1100px){ .cards-track { gap:12px } .carousel-item { flex: 0 0 calc((100% - var(--gap)) / 2); min-width: calc((100% - var(--gap)) / 2); } .hero__content{grid-template-columns:1fr} .hero__card{order:2} }
+  @media (max-width:760px){
+    .menu{display:none}
+    .cards-track{gap:12px}
+    .carousel-item{flex:0 0 100%;min-width:100%;}
+    .news-grid{grid-template-columns:1fr}
+    .hero{padding:40px 0}
+    .hero h1{font-size:1.7rem}
+    .hero p{font-size:0.95rem}
+  }
 
-    .testimonials { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
-    .testimonial { background:white; padding:30px; border-radius:18px; box-shadow:0 12px 30px rgba(0,0,0,0.07); }
-    .testimonial strong { display:block; margin-top:15px; color:var(--primary); }
+  /* Insights / pills */
+  .insights{display:flex;gap:12px;align-items:center;overflow:auto;padding-bottom:6px}
+  .insight-pill{min-width:220px;background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 6px 14px rgba(2,6,23,0.04);font-weight:600;color:var(--brand);border:1px solid rgba(0,114,198,0.08)}
 
-    .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-    .gallery img { width:100%; height:220px; object-fit:cover; border-radius:16px; cursor: zoom-in; display:block; }
+  /* News + contact */
+  .news-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+  .news-list{display:flex;flex-direction:column;gap:12px}
+  .news-item{background:#fff;padding:12px;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
+  .news-item h4{margin:0 0 6px;font-size:1rem}
+  .news-item p{margin:0;color:var(--muted)}
 
-    /* Modal / lightbox */
-    .img-modal {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.85);
-      z-index: 2000;
-      padding: 30px;
-    }
-    .img-modal.active { display: flex; }
-    .img-modal__content {
-      max-width: 1100px;
-      width: 100%;
-      max-height: 90vh;
-      overflow: hidden;
-      border-radius: 12px;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-    .img-modal__img-wrap {
-      flex: 1 1 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: #111;
-    }
-    .img-modal__img {
-      max-width: 100%;
-      max-height: 80vh;
-      object-fit: contain;
-      display: block;
-    }
-    .img-modal__caption {
-      padding: 12px 18px;
-      font-size: 1rem;
-      background: #fff;
-      color: #222;
-      text-align: left;
-      border-top: 1px solid #eee;
-    }
-    .img-modal__close {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 28px;
-      cursor: pointer;
-    }
+  .contact-card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
 
-    /* small screens */
-    @media (max-width: 760px) {
-      header { padding-left: 20px; }
-      .card img { height: 180px; }
-      .gallery img { height: 140px; }
-      .img-modal__content { border-radius: 8px; }
-      .img-modal__caption { font-size: .95rem; }
-    }
-  </style>
+  /* Footer */
+  footer{background:#0b0b0b;color:rgba(255,255,255,0.78);padding:28px 20px;margin-top:34px}
+  footer .foot-grid{max-width:var(--max-width);margin:0 auto;display:flex;gap:30px;align-items:flex-start;justify-content:space-between}
+  footer h5{margin:0 0 12px;font-size:1rem}
+  footer a{color:rgba(255,255,255,0.85)}
+
+  /* Image modal kept */
+  .img-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:9999;padding:20px}
+  .img-modal.active{display:flex}
+  .img-modal img{max-width:100%;max-height:90vh;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+  .modal-caption{color:#fff;margin-top:12px;font-size:0.95rem}
+  .close-x{position:fixed;top:18px;right:18px;font-size:28px;color:#fff;background:transparent;border:0;cursor:pointer}
+</style>
 </head>
 <body>
 
-<div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
-<div class="sidebar">
-  <h3>Menu</h3>
-  <a href="#dogs">Available Dogs</a>
-  <a href="#stud">Stud Services</a>
-  <a href="#security">Security Dogs</a>
-  <a href="#why">Why Us</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
+<!-- Top navigation: brand moved to top-right -->
+<div class="topbar">
+  <div class="container nav">
+    <nav class="menu" role="navigation" aria-label="Main navigation">
+      <a href="#dogs">Available Dogs</a>
+      <a href="#stud">Stud Services</a>
+      <a href="#security">Security</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="brand">
+      KABUKENNELS
+    </div>
+
+    <div style="margin-left:12px">
+      <a class="cta-btn" href="https://wa.me/254798175075" target="_blank">Contact</a>
+    </div>
+  </div>
 </div>
 
-<header>
-  <div class="hero-bg"></div>
-  <h1>KABUKENNELS</h1>
-  <p>Premium German Shepherds, Rottweilers, and professionally trained security dogs bred for excellence, loyalty, and protection.</p>
-  <nav>
-    <a href="#dogs">Dogs</a>
-    <a href="#stud">Stud Services</a>
-    <a href="#security">Security Dogs</a>
-    <a href="#why">Why Us</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<!-- Hero -->
+<header class="hero" role="banner">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__overlay" aria-hidden="true"></div>
 
-  <div class="cta">
-    <a href="#dogs">View Available Dogs</a>
-    <a href="https://wa.me/254798175075">WhatsApp Us</a>
+  <div class="hero__content">
+    <div>
+      <h1>Premium Dogs, professional training, trusted service</h1>
+      <p>We breed, train and support German Shepherds, Rottweilers and security dogs for families, businesses and institutions. Find available puppies, book stud services, and request security-trained dogs.</p>
+
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#dogs" class="cta-btn" style="padding:12px 18px;border-radius:10px">View Available Dogs</a>
+        <a href="#contact" style="padding:12px 18px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;font-weight:700;text-decoration:none">Request a Quote</a>
+      </div>
+    </div>
+
+    <!-- hero card now contains quick links only (search removed per request) -->
+    <aside class="hero__card" aria-labelledby="quick-title">
+      <h4 id="quick-title">Quick links</h4>
+      <div style="font-size:0.95rem;color:var(--muted);margin-bottom:10px">Jump to common pages</div>
+      <div class="hero__links">
+        <a href="#dogs">Available</a>
+        <a href="#stud">Stud</a>
+        <a href="#security">Trained</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+    </aside>
   </div>
 </header>
 
-<!-- Image modal (lightbox) -->
-<div id="imgModal" class="img-modal" role="dialog" aria-hidden="true">
-  <button class="img-modal__close" aria-label="Close (Esc)" id="imgModalClose">×</button>
-  <div class="img-modal__content" role="document">
-    <div class="img-modal__img-wrap">
-      <img id="imgModalImage" src="" alt="" class="img-modal__img">
+<!-- Featured stories carousel -->
+<section class="section" aria-labelledby="featured-title">
+  <div class="heading">
+    <h2 id="featured-title">Featured stories</h2>
+    <div class="carousel-controls">
+      <a class="more" href="#gallery">See all stories →</a>
+      <button id="prevBtn" class="carousel-btn" aria-label="Previous">‹</button>
+      <button id="nextBtn" class="carousel-btn" aria-label="Next">›</button>
     </div>
-    <div id="imgModalCaption" class="img-modal__caption"></div>
+  </div>
+
+  <div class="cards-carousel" id="cardsCarousel" tabindex="0" aria-roledescription="carousel">
+    <div class="cards-track" id="cardsTrack">
+      <!-- Carousel items: point to images/feature1.jpg etc. Keep filenames in images/ folder -->
+      <div class="carousel-item">
+        <article class="card">
+          <div class="thumb" style="background-image:url('images/feature1.jpg')" role="img" aria-label="Feature 1"></div>
+          <div class="card-body">
+            <div class="meta">Security · Training</div>
+            <h3>How we train security dogs for businesses</h3>
+            <p>Professional obedience, scenario training, and handler coordination for reliable security partners.</p>
+            <a class="read" href="#security">Read story</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-item">
+        <article class="card">
+          <div class="thumb" style="background-image:url('images/feature2.jpg')" role="img" aria-label="Feature 2"></div>
+          <div class="card-body">
+            <div class="meta">Breeding · Health</div>
+            <h3>Responsible breeding: bloodlines and welfare</h3>
+            <p>Our approach to ensuring strong genetics, socialisation and responsible rehoming of puppies.</p>
+            <a class="read" href="#dogs">Read story</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-item">
+        <article class="card">
+          <div class="thumb" style="background-image:url('images/feature3.jpg')" role="img" aria-label="Feature 3"></div>
+          <div class="card-body">
+            <div class="meta">Clients · Success</div>
+            <h3>Case study: Security dogs reduce incidents</h3>
+            <p>A large estate leveraged trained dogs to reduce intrusion and improve response times.</p>
+            <a class="read" href="#testimonials">Read story</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- duplicate items to enable smoother wrap-around for continuous effect -->
+      <div class="carousel-item">
+        <article class="card">
+          <div class="thumb" style="background-image:url('images/feature1.jpg')" role="img" aria-label="Feature 1 duplicate"></div>
+          <div class="card-body">
+            <div class="meta">Security · Training</div>
+            <h3>How we train security dogs for businesses</h3>
+            <p>Professional obedience and scenario training to make reliable security partners.</p>
+            <a class="read" href="#security">Read story</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-item">
+        <article class="card">
+          <div class="thumb" style="background-image:url('images/feature2.jpg')" role="img" aria-label="Feature 2 duplicate"></div>
+          <div class="card-body">
+            <div class="meta">Breeding · Health</div>
+            <h3>Responsible breeding: bloodlines and welfare</h3>
+            <p>Strength, health and humane rehoming practices.</p>
+            <a class="read" href="#dogs">Read story</a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Trending insights -->
+<section class="section" aria-labelledby="insights-title">
+  <div class="heading">
+    <h2 id="insights-title">Trending insights</h2>
+    <a class="more" href="#testimonials">More insights →</a>
+  </div>
+
+  <div class="insights" role="list">
+    <div class="insight-pill" role="listitem">Training tips: socializing puppies</div>
+    <div class="insight-pill" role="listitem">Vaccination & health schedule</div>
+    <div class="insight-pill" role="listitem">Selecting a security dog</div>
+    <div class="insight-pill" role="listitem">Preparing your home for a new puppy</div>
+  </div>
+</section>
+
+<!-- News and contact -->
+<section class="section">
+  <div class="heading">
+    <h2>News & updates</h2>
+    <a class="more" href="#contact">Announcements →</a>
+  </div>
+
+  <div class="news-grid">
+    <div class="news-list">
+      <div class="news-item">
+        <h4>New litter available — German Shepherd</h4>
+        <p>We now have vaccinated, well-socialized German Shepherd puppies ready for adoption. Contact to reserve.</p>
+      </div>
+      <div class="news-item">
+        <h4>Security dog training schedule updated</h4>
+        <p>Upcoming training cycles start next month. We offer customised programs for businesses.</p>
+      </div>
+      <div class="news-item">
+        <h4>Stud services: booking open</h4>
+        <p>Top-quality stud males with proven lineage. Terms and appointments available by contact.</p>
+      </div>
+    </div>
+
+    <aside class="contact-card">
+      <h4>Visit or contact us</h4>
+      <p style="margin:6px 0;color:var(--muted)">P.O BOX 50200-300, CHWELE<br>Email: <a href="mailto:kabudaniel4@gmail.com">kabudaniel4@gmail.com</a><br>WhatsApp: <a href="https://wa.me/254798175075">+254 798 175 075</a></p>
+      <div style="margin-top:12px;border-radius:8px;overflow:hidden">
+        <img src="images/map-thumb.jpg" alt="Map to Kabukennels" style="width:100%;display:block;object-fit:cover;height:140px">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Gallery (images now in images/ folder) -->
+<section id="gallery" class="section">
+  <div class="heading">
+    <h2>Gallery</h2>
+    <a class="more" href="#gallery">View gallery →</a>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+    <img class="expandable" src="images/gallery1.jpg" alt="Kennel dog" style="width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:zoom-in">
+    <img class="expandable" src="images/gallery2.jpg" alt="Puppies" style="width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:zoom-in">
+    <img class="expandable" src="images/gallery3.jpg" alt="Training" style="width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:zoom-in">
+    <img class="expandable" src="images/gallery4.jpg" alt="Security dog" style="width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:zoom-in">
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <div class="heading">
+    <h2>Contact & visit</h2>
+    <a class="more" href="#contact">Get directions →</a>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+    <div class="contact-card">
+      <h4>Request information or a site visit</h4>
+      <p style="color:var(--muted)">Complete the form or call/WhatsApp us and we will respond within one business day.</p>
+      <form onsubmit="alert('Form demo — replace with real backend') ; return false">
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+          <input placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #e6e9ee">
+          <input placeholder="Phone or email" style="padding:10px;border-radius:8px;border:1px solid #e6e9ee">
+          <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:8px;border:1px solid #e6e9ee"></textarea>
+          <button class="cta-btn" type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="contact-card">
+      <h4>Where we are</h4>
+      <iframe src="https://www.google.com/maps?q=Kabukennels%20Chwele&output=embed" width="100%" height="260" style="border:0;border-radius:8px;"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h5>KABUKENNELS</h5>
+      <p style="color:rgba(255,255,255,0.7);max-width:300px">Premium puppies, trained security dogs, stud and after-sale support.</p>
+    </div>
+
+    <div>
+      <h5>Explore</h5>
+      <p style="margin:6px 0"><a href="#dogs">Available Dogs</a><br><a href="#stud">Stud Services</a><br><a href="#security">Security</a></p>
+    </div>
+
+    <div>
+      <h5>Contact</h5>
+      <p style="margin:6px 0"><a href="mailto:kabudaniel4@gmail.com">kabudaniel4@gmail.com</a><br><a href="https://wa.me/254798175075">+254 798 175 075</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Image modal (expand images) -->
+<div id="imgModal" class="img-modal" aria-hidden="true">
+  <button class="close-x" aria-label="Close" onclick="closeModal()">✕</button>
+  <div>
+    <img id="modalImg" src="" alt="">
+    <div class="modal-caption" id="modalCaption"></div>
   </div>
 </div>
 
-<section id="dogs" class="light">
-  <h2>Available Dogs</h2>
-  <p class="subtitle">Carefully bred, vaccinated, and raised under professional care.</p>
-
-  <div class="grid">
-    <div class="card">
-      <img class="expandable" src="dog1.jpg" alt="German Shepherd Puppy">
-      <div class="card-content">
-        <span class="badge">Available</span>
-        <h3>German Shepherd Puppy</h3>
-        <p>3 months old · Vaccinated · KSh 50,000</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img class="expandable" src="dog2.jpg" alt="Phalene">
-      <div class="card-content">
-        <span class="badge">Available</span>
-        <h3>Phalene Puppy</h3>
-        <p>11 months old · Strong bloodline · KSh 45,000</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="stud">
-  <h2>Stud Services</h2>
-  <p class="subtitle">Elite males with proven genetics and temperament.</p>
-
-  <div class="grid">
-    <div class="card">
-      <img class="expandable" src="stud1.jpg" alt="German Shepherd Stud">
-      <div class="card-content">
-        <span class="badge">Stud</span>
-        <h3>German Shepherd Male</h3>
-        <p>Excellent structure, obedience trained, strong lineage.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="security" class="light">
-  <h2>Security Dogs</h2>
-  <p class="subtitle">Professionally trained dogs for home, business, and industrial security.</p>
-
-  <div class="grid">
-    <div class="card">
-      <img class="expandable" src="security1.jpg" alt="Security Dog">
-      <div class="card-content">
-        <span class="badge">Trained</span>
-        <h3>Trained Security Dog</h3>
-        <p>Command trained, alert, disciplined, and reliable.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="why">
-  <h2>Why Choose KABUKENNELS</h2>
-
-  <div class="features">
-    <div class="feature">
-      <h3>Premium Bloodlines</h3>
-      <p>Carefully selected genetics to ensure strength, intelligence, and health.</p>
-    </div>
-    <div class="feature">
-      <h3>Professional Training</h3>
-      <p>Dogs trained for obedience, security, and controlled aggression.</p>
-    </div>
-    <div class="feature">
-      <h3>After-Sale Support</h3>
-      <p>Guidance on feeding, training, and care even after purchase.</p>
-    </div>
-    <div class="feature">
-      <h3>Trusted & Experienced</h3>
-      <p>Years of experience serving homes, businesses, and institutions.</p>
-    </div>
-  </div>
-</section>
-
-<section id="testimonials">
-  <h2>Client Testimonials</h2>
-  <p class="subtitle">Trusted by dog owners, businesses, and security clients.</p>
-
-  <div class="testimonials">
-    <div class="testimonial">
-      <p>"Excellent German Shepherd. Very disciplined and alert. Best kennel experience I have had."</p>
-      <strong>— Home Owner, Nairobi</strong>
-    </div>
-    <div class="testimonial">
-      <p>"Professional service and strong bloodlines. The security dog exceeded expectations."</p>
-      <strong>— Business Client</strong>
-    </div>
-    <div class="testimonial">
-      <p>"Great after-sale support and guidance. Highly recommended."</p>
-      <strong>— Dog Breeder Partner</strong>
-    </div>
-  </div>
-</section>
-
-<section id="gallery" class="light">
-  <h2>Gallery</h2>
-  <p class="subtitle">A glimpse into our dogs, training, and facilities.</p>
-
-  <div class="gallery">
-    <img class="expandable" src="gallery1.jpg" alt="Kennel dog">
-    <img class="expandable" src="gallery2.jpg" alt="Training session">
-    <img class="expandable" src="gallery3.jpg" alt="Security dog on duty">
-    <img class="expandable" src="gallery4.jpg" alt="Puppies">
-  </div>
-</section>
-
-<section id="contact" class="light">
-  <h2>Our Location</h2>
-  <p class="subtitle">Visit us or find us easily using Google Maps.</p>
-
-  <div style="max-width:1200px;margin:0 auto 60px;">
-    <iframe
-      src="https://www.google.com/maps?q=Kabukennels%20Chwele&output=embed"
-      width="100%"
-      height="400"
-      style="border:0;border-radius:20px;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-
-    <div style="margin-top:20px;text-align:center;">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Kabukennels+Chwele" target="_blank" style="background:#0a3cff;color:white;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:600;">Get Directions</a>
-    </div>
-  </div>
-
-  <div class="contact-box">
-    <h2>Contact KABUKENNELS</h2>
-    <p>Email: <a href="mailto:kabudaniel4@gmail.com">kabudaniel4@gmail.com</a></p>
-    <p>Phone / WhatsApp: <a href="https://wa.me/254798175075">+254 798 175 075</a></p>
-    <p>P.O BOX 50200-300, CHWELE</p>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 KABUKENNELS. Premium Dogs. Professional Service.</p>
-</footer>
-
-<a class="whatsapp-float" href="https://wa.me/254798175075" target="_blank">💬</a>
-
 <script>
-  // Sidebar toggle (mobile)
-  function toggleSidebar() {
-    document.querySelector('.sidebar').classList.toggle('active');
+/* -----------------------------
+  Carousel (auto-scroll)
+   - Auto-advances every 3s
+   - Pause on hover / focus
+   - Next/Prev buttons
+   - Works responsively (1, 2 or 3 items visible depending on screen width)
+   Implementation detail: we advance by the computed item width including gap.
+------------------------------*/
+(function(){
+  const track = document.getElementById('cardsTrack');
+  const carousel = document.getElementById('cardsCarousel');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let autoTimer = null;
+  let scrollAmount = 0;
+  let gap = parseFloat(getComputedStyle(track).gap) || 18;
+
+  function computeScrollAmount(){
+    const item = track.querySelector('.carousel-item');
+    if(!item) return 0;
+    const style = window.getComputedStyle(item);
+    const itemWidth = item.getBoundingClientRect().width;
+    // use item width + gap to scroll one item
+    return Math.round(itemWidth + gap);
   }
 
-  // Lightbox modal behavior
-  (function () {
-    const modal = document.getElementById('imgModal');
-    const modalImage = document.getElementById('imgModalImage');
-    const modalCaption = document.getElementById('imgModalCaption');
-    const btnClose = document.getElementById('imgModalClose');
-
-    // Utility: extract filename from path
-    function filenameFromPath(path) {
-      try {
-        const parts = path.split('/');
-        return parts[parts.length - 1];
-      } catch (e) {
-        return path;
-      }
-    }
-
-    // Open modal for a clicked image element
-    function openModalFor(imgEl) {
-      const src = imgEl.getAttribute('src');
-      const alt = imgEl.getAttribute('alt') || '';
-      modalImage.src = src;
-      modalImage.alt = alt;
-      // Show caption as filename and, if available, the alt text in parentheses
-      const filename = filenameFromPath(src);
-      modalCaption.textContent = filename + (alt ? ' — ' + alt : '');
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-      // prevent page scroll while modal open
-      document.body.style.overflow = 'hidden';
-      // focus close button for accessibility
-      btnClose.focus();
-    }
-
-    function closeModal() {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      modalImage.src = '';
-      modalImage.alt = '';
-      modalCaption.textContent = '';
-      document.body.style.overflow = '';
-    }
-
-    // attach click handlers to all images with class 'expandable'
-    document.querySelectorAll('img.expandable').forEach(img => {
-      img.addEventListener('click', function (e) {
-        openModalFor(img);
-      });
-      // also make Enter key open when focused
-      img.tabIndex = 0;
-      img.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openModalFor(img);
+  function startAuto(){
+    stopAuto();
+    autoTimer = setInterval(()=>{
+      // scroll by one item
+      const amount = computeScrollAmount();
+      // smooth scrolling by changing transform on track
+      // use scrollLeft on parent for predictable behavior across responsive widths
+      carousel.scrollBy({ left: amount, behavior: 'smooth' });
+      // when near the end, wrap to start
+      // check if we've reached end after a short delay
+      setTimeout(() => {
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 2) {
+          // smooth jump back to start
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
         }
-      });
-    });
+      }, 700);
+    }, 3000);
+  }
+  function stopAuto(){
+    if(autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  }
 
-    // close when clicking the close button
-    btnClose.addEventListener('click', function () {
-      closeModal();
-    });
+  nextBtn.addEventListener('click', ()=>{
+    const amount = computeScrollAmount();
+    carousel.scrollBy({ left: amount, behavior: 'smooth' });
+  });
+  prevBtn.addEventListener('click', ()=>{
+    const amount = computeScrollAmount();
+    carousel.scrollBy({ left: -amount, behavior: 'smooth' });
+  });
 
-    // close when clicking outside the content
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
+  // pause on hover or focus
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('focusin', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+  carousel.addEventListener('focusout', startAuto);
 
-    // close on Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-      }
-    });
+  // start when DOM ready
+  startAuto();
 
-    // Prevent modal content clicks from closing
-    document.querySelector('.img-modal__content').addEventListener('click', function (e) {
-      e.stopPropagation();
+  // ensure carousel snaps back to start on resize if needed
+  window.addEventListener('resize', () => {
+    // no-op for now; computeScrollAmount uses layout values dynamically
+  });
+})();
+
+/* -----------------------------
+  Image expand modal
+------------------------------*/
+(function(){
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalCaption = document.getElementById('modalCaption');
+
+  // attach to all images with class expandable
+  document.querySelectorAll('img.expandable').forEach(img=>{
+    img.addEventListener('click', ()=>{
+      modalImg.src = img.src;
+      modalImg.alt = img.alt || '';
+      modalCaption.textContent = (img.getAttribute('src') || '').split('/').pop() + (img.alt ? ' — ' + img.alt : '');
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
     });
-  })();
+    img.tabIndex = 0;
+    img.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); } });
+  });
+
+  window.closeModal = function(){
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden','true');
+    modalImg.src = '';
+    modalCaption.textContent = '';
+    document.body.style.overflow = '';
+  };
+
+  modal.addEventListener('click', function(e){
+    if(e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+})();
+
 </script>
 
 </body>
