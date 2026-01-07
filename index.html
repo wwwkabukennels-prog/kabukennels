@@ -82,7 +82,7 @@
       }
     }
 
-    /* DARK OVERLAY */
+    /* HERO BACKGROUND OVERLAY */
     .hero-bg::after {
       content: '';
       position: absolute;
@@ -126,31 +126,26 @@
       position: relative;
       background: none;
       color: rgb(250, 250, 250);
-      padding: 80px 20px 100px 260px;
+      padding: 80px 20px 100px 260px; /* keeps space for sidebar */
       text-align: center;
       overflow: hidden;
+      min-height: 520px; /* height for hero area */
     }
 
-    /* HERO SLIDES */
+    /* HERO IMAGE (single image) */
     .hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
 
-  background-image: url('images/hero1.jpg'); /* use ONE image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-    
-
-    .logo {
-      width: 110px;
-      margin-bottom: 15px;
+      /* Put your single cover image here (replace path as needed) */
+      background-image: url('images/cover.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     header h1 {
@@ -389,9 +384,11 @@
 </div>
 
 <header>
-  <div class="logo-wrap">
-    <img src="images/logo.png" alt="Kabukennels Logo" class="logo">
-  </div>
+  <!-- single hero background image (replace images/cover.jpg with your image) -->
+  <div class="hero-bg"></div>
+
+  <!-- Logo removed as requested -->
+
   <h1>KABUKENNELS</h1>
   <p>Premium German Shepherds, Rottweilers, and professionally trained security dogs bred for excellence, loyalty, and protection.</p>
 
